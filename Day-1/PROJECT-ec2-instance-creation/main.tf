@@ -1,8 +1,10 @@
 provider "aws" {
-    region = "us-east-1"  # Set your desired AWS region
+    region = "eu-central-1"  # Set your desired AWS region
 }
 
-resource "aws_instance" "example" {
-    ami           = "ami-0c55b159cbfafe1f0"  # Specify an appropriate AMI ID
-    instance_type = "t2.micro"
+resource "aws_instance" "mydemoserver" {
+    ami           = "ami-03484a09b43a06725"     # Specify an appropriate AMI ID
+    instance_type = "t2.micro"                  #Specify an appropriate instance type
+    subnet_id     = "subnet-0e1bf9befd5fda4e5"  #Specify an appropriate subnet id
+    key_name      = "my-first-keypair"          #Specify an appropriate key pair name
 }
